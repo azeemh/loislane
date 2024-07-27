@@ -1,6 +1,43 @@
-input, textarea, {
-	width: 80%;
-	margin-left: 10%;
-	margin-right: 10%;
-	padding: 2rem;
+/*-- This app supports scss, so any css or scss will work. --*/
+
+// mnml defaults //
+
+*, html {
+	font-family: sans-serif;
+	text-decoration: none;
 }
+
+a {
+	text-decoration: underline;
+	color: black;
+}
+
+input, textarea {
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	padding: 1rem;
+	font-size: 2rem;
+}
+
+form {
+	display: inline-block;
+	width: 96%;
+}
+
+
+input[type="color"] {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	height: 4rem;
+}
+
+footer {
+	position: fixed;
+	  left: 0;
+	  bottom: 0;
+	  width: 100%;
+	  text-align: center;
+}
+
+// Put your user styles here: //

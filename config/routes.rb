@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   resources :stories
   devise_for :users
   
@@ -6,6 +7,8 @@ Rails.application.routes.draw do
   get '/about', to: 'home#about'
   get '/contact', to: 'home#contact'
   root to: "home#index"
+
+  get '/:name', to: 'categories#public'
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

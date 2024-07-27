@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Loislane</title>
+    <title>The Daily Planet</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,10 +10,25 @@
     <%= javascript_importmap_tags %>
   </head>
 
+  <nav>
+    <a href="/">The Daily Planet</a>
+    <% unless Category.nil? %>
+      <% Category.all.each do |category| %>
+    <a href="/<%= category.name %>" style="border: none; border-bottom: 2px solid; border-color: <%= category.color %> ;"><%= category.name.upcase %></a>
+      <% end %>
+    <% end %>
+  </nav>
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
   <body>
     <%= yield %>
   </body>
+
+  <footer>
+    <a href="/stories">Latest Stories</a>
+    <a href="/about">About Us</a>
+    <a href="/contact">Contact Us</a>
+  </footer>
 </html>

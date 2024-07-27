@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_27_031458) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_27_050642) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_27_031458) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.string "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "stories", force: :cascade do |t|
     t.string "title"
     t.string "slug"
@@ -56,6 +63,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_27_031458) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_stories_on_category_id"
     t.index ["slug"], name: "index_stories_on_slug", unique: true
     t.index ["title"], name: "index_stories_on_title", unique: true
     t.index ["user_id"], name: "index_stories_on_user_id"
@@ -75,5 +84,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_27_031458) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "stories", "categories"
   add_foreign_key "stories", "users"
 end

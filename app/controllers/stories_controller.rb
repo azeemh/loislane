@@ -1,5 +1,6 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
 
   # GET /stories or /stories.json
   def index
@@ -22,6 +23,7 @@ class StoriesController < ApplicationController
   # POST /stories or /stories.json
   def create
     @story = Story.new(story_params)
+    @story.user = current_user
 
     respond_to do |format|
       if @story.save
@@ -65,6 +67,6 @@ class StoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def story_params
-      params.require(:story).permit(:title, :slug, :content, :tags, :image, :video, :audio, :factchecked, :proofread, :enableautopublish, :autopublishdate, :publish, :publishdate, :user_id, articleassets: [])
+      params.require(:story).permit(:title, :slug, :content, :tags, :image, :video, :audio, :factchecked, :proofread, :enableautopublish, :autopublishdate, :publish, :publishdate, :user_id, :category_id, articleassets: [])
     end
 end

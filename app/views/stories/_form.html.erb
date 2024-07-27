@@ -82,8 +82,8 @@
   </div>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= form.label :category_id, style: "display: block" %>
+    <%= collection_select(:story, :category_id, Category.all, :id, :name, prompt: true ) %>
   </div>
 
   <div>
