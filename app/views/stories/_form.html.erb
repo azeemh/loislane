@@ -1,0 +1,92 @@
+<%= form_with(model: story) do |form| %>
+  <% if story.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(story.errors.count, "error") %> prohibited this story from being saved:</h2>
+
+      <ul>
+        <% story.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :slug, style: "display: block" %>
+    <%= form.text_field :slug %>
+  </div>
+
+  <div>
+    <%= form.label :content, style: "display: block" %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div>
+    <%= form.label :tags, style: "display: block" %>
+    <%= form.text_area :tags %>
+  </div>
+
+  <div>
+    <%= form.label :image, style: "display: block" %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div>
+    <%= form.label :video, style: "display: block" %>
+    <%= form.file_field :video %>
+  </div>
+
+  <div>
+    <%= form.label :audio, style: "display: block" %>
+    <%= form.file_field :audio %>
+  </div>
+
+  <div>
+    <%= form.label :articleassets, style: "display: block" %>
+    <%= form.file_field :articleassets, multiple: true %>
+  </div>
+
+  <div>
+    <%= form.label :factchecked, style: "display: block" %>
+    <%= form.check_box :factchecked %>
+  </div>
+
+  <div>
+    <%= form.label :proofread, style: "display: block" %>
+    <%= form.check_box :proofread %>
+  </div>
+
+  <div>
+    <%= form.label :enableautopublish, style: "display: block" %>
+    <%= form.check_box :enableautopublish %>
+  </div>
+
+  <div>
+    <%= form.label :autopublishdate, style: "display: block" %>
+    <%= form.datetime_field :autopublishdate %>
+  </div>
+
+  <div>
+    <%= form.label :publish, style: "display: block" %>
+    <%= form.check_box :publish %>
+  </div>
+
+  <div>
+    <%= form.label :publishdate, style: "display: block" %>
+    <%= form.datetime_field :publishdate %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

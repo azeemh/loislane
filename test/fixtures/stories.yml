@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  slug: MyString
+  content: MyText
+  tags: MyText
+  factchecked: false
+  proofread: false
+  enableautopublish: false
+  autopublishdate: 2024-07-26 23:14:58
+  publish: false
+  publishdate: 2024-07-26 23:14:58
+  user: one
+
+two:
+  title: MyString
+  slug: MyString
+  content: MyText
+  tags: MyText
+  factchecked: false
+  proofread: false
+  enableautopublish: false
+  autopublishdate: 2024-07-26 23:14:58
+  publish: false
+  publishdate: 2024-07-26 23:14:58
+  user: two

@@ -1,0 +1,79 @@
+<div id="<%= dom_id story %>">
+  <p>
+    <strong>Title:</strong>
+    <%= story.title %>
+  </p>
+
+  <p>
+    <strong>Slug:</strong>
+    <%= story.slug %>
+  </p>
+
+  <p>
+    <strong>Content:</strong>
+    <%= story.content %>
+  </p>
+
+  <p>
+    <strong>Tags:</strong>
+    <%= story.tags %>
+  </p>
+
+  <p>
+    <strong>Image:</strong>
+    <%= link_to story.image.filename, story.image if story.image.attached? %>
+  </p>
+
+  <p>
+    <strong>Video:</strong>
+    <%= link_to story.video.filename, story.video if story.video.attached? %>
+  </p>
+
+  <p>
+    <strong>Audio:</strong>
+    <%= link_to story.audio.filename, story.audio if story.audio.attached? %>
+  </p>
+
+  <p>
+    <strong>Articleassets:</strong>
+    <% story.articleassets.each do |articleasset| %>
+      <div><%= link_to articleasset.filename, articleasset %></div>
+    <% end %>
+  </p>
+
+  <p>
+    <strong>Factchecked:</strong>
+    <%= story.factchecked %>
+  </p>
+
+  <p>
+    <strong>Proofread:</strong>
+    <%= story.proofread %>
+  </p>
+
+  <p>
+    <strong>Enableautopublish:</strong>
+    <%= story.enableautopublish %>
+  </p>
+
+  <p>
+    <strong>Autopublishdate:</strong>
+    <%= story.autopublishdate %>
+  </p>
+
+  <p>
+    <strong>Publish:</strong>
+    <%= story.publish %>
+  </p>
+
+  <p>
+    <strong>Publishdate:</strong>
+    <%= story.publishdate %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= story.user_id %>
+  </p>
+
+</div>
