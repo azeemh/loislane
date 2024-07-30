@@ -69,3 +69,5 @@ end
 gem "devise", "~> 4.9"
 
 gem "dartsass-sprockets", "~> 3.1"
+
+gem "friendly_id", "~> 5.5"

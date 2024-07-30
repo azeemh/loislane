@@ -5,4 +5,7 @@ class Story < ApplicationRecord
   has_one_attached :video
   has_one_attached :audio
   has_many_attached :articleassets
+
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 end

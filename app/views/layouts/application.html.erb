@@ -10,8 +10,11 @@
     <%= javascript_importmap_tags %>
   </head>
 
+  <div id="logo">
+    <%= image_tag("Daily_Planet_logo.png") %>
+  </div>
+
   <nav>
-    <a href="/">The Daily Planet</a>
     <% unless Category.nil? %>
       <% Category.all.each do |category| %>
     <a href="/<%= category.name %>" style="border: none; border-bottom: 2px solid; border-color: <%= category.color %> ;"><%= category.name.upcase %></a>
@@ -30,5 +33,12 @@
     <a href="/stories">Latest Stories</a>
     <a href="/about">About Us</a>
     <a href="/contact">Contact Us</a>
+    || 
+    <% if user_signed_in? %>
+      <%= link_to current_user.email, edit_user_registration_path %>
+      <%= link_to "Sign out", destroy_user_session_path, data: { "turbo_method": :delete } %>
+    <% else %>
+      <a href="/journalist">Journalist</a>
+    <% end %>
   </footer>
 </html>

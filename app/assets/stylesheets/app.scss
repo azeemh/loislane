@@ -25,6 +25,10 @@ form {
 	width: 96%;
 }
 
+body {
+	padding: 5px;
+	margin: 1em;
+}
 
 input[type="color"] {
 	padding-top: 5px;
@@ -40,4 +44,41 @@ footer {
 	  text-align: center;
 }
 
-// Put your user styles here: //
+// NAVIGATION AND MENU //
+
+#logo {
+	text-align: center;
+	max-height: 200px;
+	width: auto;
+}
+
+nav {
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+}
+
+nav a {
+	text-decoration: none;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	padding-top: 2rem;
+	margin: 1rem;
+	text-align: center;
+	flex-grow: 2;
+}
+
+// Core Elements //
+
+.story {
+
+}
+
+.storycard {
+
+}
+
+
+// Put your user SCSS styles here: //

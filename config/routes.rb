@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'home#contact'
   root to: "home#index"
 
-  get '/:name', to: 'categories#public'
+  get '/journalist', to: 'home#dashboard'
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -18,4 +18,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+
+  #this has to be last so user created categories don't override the application links
+  get '/:name', to: 'categories#public'
+
 end
