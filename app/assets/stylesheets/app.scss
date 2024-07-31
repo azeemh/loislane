@@ -18,9 +18,7 @@ a {
 }
 
 input, textarea {
-	width: 90%;
-	margin-left: 5%;
-	margin-right: 5%;
+	width: 100%;
 	padding: 1rem;
 	font-size: 1rem;
 	border: none;
@@ -33,7 +31,9 @@ textarea {
 
 form {
 	display: inline-block;
-	width: 96%;
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
 
 	.field {
 		padding: 2rem;
@@ -50,6 +50,12 @@ input[type="color"] {
 	padding-top: 5px;
 	padding-bottom: 5px;
 	height: 4rem;
+}
+
+input[type="text"] {
+	width: 90%;
+	margin-left: 2%;
+	margin-right: 2%;
 }
 
 footer {

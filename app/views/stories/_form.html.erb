@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :content, style: "display: block" %>
-    <div style="padding: 4rem; margin: 1rem;">
+    <div style="padding: 2rem;">
     <%= form.text_area :content, id: "story_content", value: story.content %>
     <script>
       $('#story_content').summernote({
@@ -47,7 +47,8 @@
     <style>
       .note-editor.note-airframe .note-editing-area .note-codable, .note-editor.note-frame .note-editing-area .note-codable {
         color: teal;
-        background-color: rgb(255, 255, 255);
+        background-color: rgba(200, 200, 200, 0.1);
+        left: 6rem;
       }
     </style>
     </div>
