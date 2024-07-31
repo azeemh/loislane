@@ -7,11 +7,17 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <%= javascript_include_tag 'summernote-lite' %>
+    <%= javascript_include_tag 'sorttable' %>
     <%= javascript_importmap_tags %>
+
   </head>
 
   <div id="logo">
-    <%= image_tag("Daily_Planet_logo.png") %>
+    <a href="/"><%= image_tag("Daily_Planet_logo.png") %></a>
   </div>
 
   <nav>
@@ -32,13 +38,14 @@
   <footer>
     <a href="/stories">Latest Stories</a>
     <a href="/about">About Us</a>
-    <a href="/contact">Contact Us</a>
+    <a href="/contact">Contact</a>
     || 
     <% if user_signed_in? %>
-      <%= link_to current_user.email, edit_user_registration_path %>
+      <%= link_to "👤", edit_user_registration_path %>
+      <a href="/journalistdashboard"><%= current_user.email %></a>
       <%= link_to "Sign out", destroy_user_session_path, data: { "turbo_method": :delete } %>
     <% else %>
-      <a href="/journalist">Journalist</a>
+      <a href="/journalistdashboard">Journalist Dashboard</a>
     <% end %>
   </footer>
 </html>

@@ -3,11 +3,5 @@
 <p>Loop thru all stories in this category here.</p>
 
 <% @category.stories.each do |story| %>
-<div class="story">
-  <h1><a href="stories/<%= story.slug %>"><%= story.title %></a></h1>
-  <p>ID: <%= story.id %></p>
-  <p>Slug: <%= story.slug %></p>
-  <br>
-  <div><%= story.content %><div>    
-</div>
+<%= render "stories/storycard", story: story %>
 <% end %>

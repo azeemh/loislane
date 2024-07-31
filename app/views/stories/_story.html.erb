@@ -1,18 +1,7 @@
 <div id="<%= dom_id story %>">
-  <p>
-    <strong>Title:</strong>
-    <%= story.title %>
-  </p>
-
-  <p>
-    <strong>Slug:</strong>
-    <%= story.slug %>
-  </p>
-
-  <p>
-    <strong>Content:</strong>
-    <%= story.content %>
-  </p>
+  <h1 class="title"><%= story.title %></h1>
+  <img class="coverimage" src="<%= url_for(story.image) %>">
+  <div class="content"><%= story.content %></div>
 
   <p>
     <strong>Tags:</strong>

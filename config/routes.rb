@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'home#contact'
   root to: "home#index"
 
-  get '/journalist', to: 'home#dashboard'
+  get '/journalistdashboard', to: 'home#dashboard'
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -11,82 +11,128 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="field">
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :slug, style: "display: block" %>
     <%= form.text_field :slug %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :content, style: "display: block" %>
-    <%= form.text_area :content %>
+    <div style="padding: 4rem; margin: 1rem;">
+    <%= form.text_area :content, id: "story_content", value: story.content %>
+    <script>
+      $('#story_content').summernote({
+        placeholder: 'Write Your Article Here...',
+        tabsize: 2,
+        height: 720,
+        codemirror: { // codemirror options
+            theme: 'monokai'
+          },
+        toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video']],
+          ['view', ['codeview', 'help']]
+        ]
+      });
+    </script>
+    <style>
+      .note-editor.note-airframe .note-editing-area .note-codable, .note-editor.note-frame .note-editing-area .note-codable {
+        color: teal;
+        background-color: rgb(255, 255, 255);
+      }
+    </style>
+    </div>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :tags, style: "display: block" %>
-    <%= form.text_area :tags %>
+    <%= form.text_field :tags %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :image, style: "display: block" %>
+    <% if story.image.attached? %>
+    <br/>
+    <label>Current Image: <%= story.image.filename %></label>
+    <img class="uploaded" src="<%= url_for(story.image) %>">
+    <% end %>
     <%= form.file_field :image %>
   </div>
 
-  <div>
+  <div class="field">
+    <% if story.video.attached? %>
+    <br/>
+    <label>Current Video: <%= story.video.filename %></label>
+    <video class="uploaded" controls>
+      <source src="<%= url_for(story.video) %>">
+    </video>
+    <% end %>
     <%= form.label :video, style: "display: block" %>
     <%= form.file_field :video %>
   </div>
 
-  <div>
+  <div class="field">
+    <% if story.audio.attached? %>
+    <br/>
+    <label>Current Audio: <%= story.audio.filename %></label>
+    <audio class="uploaded" controls>
+      <source src="<%= url_for(story.audio) %>">
+    </audio>
+    <% end %>
     <%= form.label :audio, style: "display: block" %>
     <%= form.file_field :audio %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :articleassets, style: "display: block" %>
     <%= form.file_field :articleassets, multiple: true %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :factchecked, style: "display: block" %>
     <%= form.check_box :factchecked %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :proofread, style: "display: block" %>
     <%= form.check_box :proofread %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :enableautopublish, style: "display: block" %>
     <%= form.check_box :enableautopublish %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :autopublishdate, style: "display: block" %>
     <%= form.datetime_field :autopublishdate %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :publish, style: "display: block" %>
     <%= form.check_box :publish %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :publishdate, style: "display: block" %>
     <%= form.datetime_field :publishdate %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :category_id, style: "display: block" %>
     <%= collection_select(:story, :category_id, Category.all, :id, :name, prompt: true ) %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.submit %>
   </div>
 <% end %>

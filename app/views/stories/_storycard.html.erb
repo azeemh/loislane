@@ -1,0 +1,8 @@
+<div class="storycard">
+  <img class="coverimage" src="<%= url_for(story.image) %>">
+  <h1><a href="stories/<%= story.slug %>"><%= story.title %></a></h1>
+  <p>ID: <%= story.id %></p>
+  <p>Slug: <%= story.slug %></p>
+  <br>
+  <div><%= story.content %><div>    
+</div>

@@ -1,5 +1,10 @@
 /*-- This app supports scss, so any css or scss will work. --*/
 
+
+
+
+$maxwidth: 1920px;
+
 // mnml defaults //
 
 *, html {
@@ -17,17 +22,28 @@ input, textarea {
 	margin-left: 5%;
 	margin-right: 5%;
 	padding: 1rem;
-	font-size: 2rem;
+	font-size: 1rem;
+	border: none;
+	border-bottom: 2px solid;
+}
+
+textarea {
+	min-height: 500px;
 }
 
 form {
 	display: inline-block;
 	width: 96%;
+
+	.field {
+		padding: 2rem;
+	}
 }
 
 body {
-	padding: 5px;
-	margin: 1em;
+	padding: 3rem;
+	max-width: $maxwidth; // could be 100% or whatever number you feel works best
+	margin: auto;
 }
 
 input[type="color"] {
@@ -75,7 +91,35 @@ nav a {
 }
 
 .storycard {
+	display: grid;
+	max-width: 25%;
+	min-width: 200px;
 
+}
+
+.coverimage {
+	width: 100%;
+	height: auto;
+}
+
+#toolbar {
+	display: inline-block;
+}
+
+// Forms and UI //
+.uploaded {
+	width: 90%;
+	height: auto;
+	margin-left: 5%;
+	margin-right: 5%;
+	padding: 1rem;
+	font-size: 2rem;
+}
+
+#story_content {
+    position: relative;
+    width: 100%;
+    min-height: 720px;
 }
 
 
