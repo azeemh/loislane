@@ -55,11 +55,6 @@
   </div>
 
   <div class="field">
-    <%= form.label :tags, style: "display: block" %>
-    <%= form.text_field :tags %>
-  </div>
-
-  <div class="field">
     <%= form.label :image, style: "display: block" %>
     <% if story.image.attached? %>
     <br/>
@@ -124,13 +119,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :publishdate, style: "display: block" %>
-    <%= form.datetime_field :publishdate %>
+    <%= form.label :category_id, style: "display: block" %>
+    <%= collection_select(:story, :category_id, Category.all, :id, :name, prompt: true ) %>
   </div>
 
   <div class="field">
-    <%= form.label :category_id, style: "display: block" %>
-    <%= collection_select(:story, :category_id, Category.all, :id, :name, prompt: true ) %>
+    <%= form.label :tags, style: "display: block" %>
+    <%= form.text_field :tags %>
   </div>
 
   <div class="field">
