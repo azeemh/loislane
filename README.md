@@ -15,7 +15,7 @@ uses active storage defaults -- local storage will work on ec2 (recommend using 
 #### First Time Setup: 
 First, `cd loislane` then `rails db:setup`
 
-If you need to drop the database and start from scratch:
+#### If you need to drop the database and start from scratch:
 
 `rails db:drop`, `rails db:create` then `rails db:migrate`
 
@@ -26,4 +26,4 @@ or
 (setup will create tables and run any migrations)
 
 
-If you'd like to stay up to date `git pull` and then `run rails db:migrate`
+#### If you'd like to stay up to date `git pull` and then `run rails db:migrate`
