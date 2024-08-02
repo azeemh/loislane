@@ -1,5 +1,11 @@
 <h1 style="text-align: right;"><%= Date.today.strftime("%A, %B %e %Y") %></h1>
-<h2>All The News. All The Time.</h2>
+<h2>
+<% if Setting.last.nil? %>
+All The News. All The Time.
+<% else %>
+<%= Setting.last.tagline %>
+<% end %>
+</h2>
 [PUT IMAGE VIDEO OR AUDIO]
 
 
