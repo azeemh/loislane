@@ -36,3 +36,4 @@ or
 
 `rails s`
 
+## This is currently a work in progress and not ready to deploy a real newspaper yet.
