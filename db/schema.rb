@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_30_194411) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_01_224142) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -60,6 +60,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_30_194411) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
+  create_table "settings", force: :cascade do |t|
+    t.string "newspapername"
+    t.string "tagline"
+    t.bigint "theme_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["theme_id"], name: "index_settings_on_theme_id"
+  end
+
   create_table "stories", force: :cascade do |t|
     t.string "title"
     t.string "slug"
@@ -81,6 +90,22 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_30_194411) do
     t.index ["user_id"], name: "index_stories_on_user_id"
   end
 
+  create_table "themes", force: :cascade do |t|
+    t.string "name"
+    t.string "backgroundcolor"
+    t.string "headingcolor"
+    t.string "textcolor"
+    t.string "primarycolor"
+    t.string "secondarycolor"
+    t.string "tertiarycolor"
+    t.string "quaternarycolor"
+    t.string "maxwidth"
+    t.text "customcss"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_themes_on_name", unique: true
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -95,6 +120,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_30_194411) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "settings", "themes"
   add_foreign_key "stories", "categories"
   add_foreign_key "stories", "users"
 end

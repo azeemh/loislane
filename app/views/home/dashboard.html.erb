@@ -1,2 +1,30 @@
-<h1>Home#dashboard</h1>
-<p>Find me in app/views/home/dashboard.html.erb</p>
+<h1>Dashboard</h1>
+<p style="padding: 3rem;">“The basis of our governments being the opinion of the people, the very first object should be to keep that right; and were it left to me to decide whether we should have a government without newspapers, or newspapers without a government, I should not hesitate a moment to prefer the latter.” – Thomas Jefferson</p>
+
+<!-- IF USER IS EDITOR? -->
+<h2>Settings</h2>
+<% if @setting.nil? %>
+<%= link_to "New Settings", new_setting_path %>
+<% else %>
+<h3><%= @setting.newspapername %></h3>
+<em><%= @setting.tagline %></em>
+<br/>
+<br/>
+<label>Current Theme: <%= @setting.theme.name %></label>
+<br/>
+<br/>
+<%= link_to "Edit Settings", edit_setting_path(@setting) %>
+<% end %>
+
+<h2>Themes</h2>
+<% unless @themes.nil? %>
+	<% @themes.each do |theme| %>
+		<%= link_to theme.name, edit_theme_path(theme) %>
+	<% end %>
+<% end %>
+<br/><br/>
+<%= link_to "New Theme", new_theme_path %>
+<!-- END IF USER IS EDITOR? -->
+
+<h2>Stories</h2>
+<%= link_to "New Story", new_story_path %>

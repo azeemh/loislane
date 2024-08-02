@@ -17,16 +17,40 @@ a {
 	color: black;
 }
 
+body {
+	padding: 3rem;
+	max-width: $maxwidth; // could be 100% or whatever number you feel works best
+	margin: auto;
+}
+
+footer {
+	position: fixed;
+	  left: 0;
+	  bottom: 0;
+	  width: 100%;
+	  text-align: center;
+}
+
+// Forms and UI //
+.uploaded {
+	width: 90%;
+	height: auto;
+	margin-left: 5%;
+	margin-right: 5%;
+	padding: 1rem;
+	font-size: 2rem;
+}
+
 input, textarea {
 	width: 100%;
 	padding: 1rem;
 	font-size: 1rem;
 	border: none;
-	border-bottom: 2px solid;
 }
 
 textarea {
 	min-height: 500px;
+	border-bottom: 2px solid;
 }
 
 form {
@@ -40,12 +64,6 @@ form {
 	}
 }
 
-body {
-	padding: 3rem;
-	max-width: $maxwidth; // could be 100% or whatever number you feel works best
-	margin: auto;
-}
-
 input[type="color"] {
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -56,20 +74,23 @@ input[type="text"] {
 	width: 90%;
 	margin-left: 2%;
 	margin-right: 2%;
+	border-bottom: 1px dotted;
+	border-radius: .5em;
 }
 
-footer {
-	position: fixed;
-	  left: 0;
-	  bottom: 0;
-	  width: 100%;
-	  text-align: center;
+input[type="file"] {
+	text-align: left;
 }
 
 // NAVIGATION AND MENU //
 
 #logo {
 	text-align: center;
+	max-height: 200px;
+	width: auto;
+}
+
+#logo a img {
 	max-height: 200px;
 	width: auto;
 }
@@ -100,7 +121,6 @@ nav a {
 	display: grid;
 	max-width: 25%;
 	min-width: 200px;
-
 }
 
 .coverimage {
@@ -112,21 +132,23 @@ nav a {
 	display: inline-block;
 }
 
-// Forms and UI //
-.uploaded {
-	width: 90%;
-	height: auto;
-	margin-left: 5%;
-	margin-right: 5%;
-	padding: 1rem;
-	font-size: 2rem;
-}
-
 #story_content {
     position: relative;
     width: 100%;
     min-height: 720px;
 }
 
+
+//horizontal tool grid//
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
+}
+
+.grid > div {
+  height: 100px;
+  background: red;
+}
 
 // Put your user SCSS styles here: //

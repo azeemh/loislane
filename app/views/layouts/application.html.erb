@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>The Daily Planet</title>
+    <title>
+      <% if Setting.last.nil? %>
+      The Daily Planet
+      <% else %>
+      <%= Setting.last.newspapername %>
+      <% end %>
+    </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,14 +16,22 @@
     
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+
     <%= javascript_include_tag 'summernote-lite' %>
     <%= javascript_include_tag 'sorttable' %>
+
     <%= javascript_importmap_tags %>
 
   </head>
 
   <div id="logo">
-    <a href="/"><%= image_tag("Daily_Planet_logo.png") %></a>
+    <a href="/">
+      <% if !Setting.first.nil? && Setting.first.theme.logo.attached? %>
+      <img src="<%= url_for(Setting.first.theme.logo) %>">
+      <% else %>
+      <%= image_tag("Daily_Planet_logo.png") %>
+      <% end %>
+    </a>
   </div>
 
   <nav>
@@ -48,4 +62,8 @@
       <a href="/journalistdashboard">Journalist Dashboard</a>
     <% end %>
   </footer>
+
+  <!-- Theme overrides -->
+  <% unless Setting.last.nil? %>
+  <% end %>
 </html>

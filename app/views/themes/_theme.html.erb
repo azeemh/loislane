@@ -1,0 +1,57 @@
+<div id="<%= dom_id theme %>">
+  <p>
+    <strong>Name:</strong>
+    <%= theme.name %>
+  </p>
+
+  <p>
+    <strong>Backgroundcolor:</strong>
+    <%= theme.backgroundcolor %>
+  </p>
+
+  <p>
+    <strong>Headingcolor:</strong>
+    <%= theme.headingcolor %>
+  </p>
+
+  <p>
+    <strong>Textcolor:</strong>
+    <%= theme.textcolor %>
+  </p>
+
+  <p>
+    <strong>Primarycolor:</strong>
+    <%= theme.primarycolor %>
+  </p>
+
+  <p>
+    <strong>Secondarycolor:</strong>
+    <%= theme.secondarycolor %>
+  </p>
+
+  <p>
+    <strong>Tertiarycolor:</strong>
+    <%= theme.tertiarycolor %>
+  </p>
+
+  <p>
+    <strong>Quaternarycolor:</strong>
+    <%= theme.quaternarycolor %>
+  </p>
+
+  <p>
+    <strong>Logo:</strong>
+    <%= link_to theme.logo.filename, theme.logo if theme.logo.attached? %>
+  </p>
+
+  <p>
+    <strong>Maxwidth:</strong>
+    <%= theme.maxwidth %>
+  </p>
+
+  <p>
+    <strong>Customcss:</strong>
+    <%= theme.customcss %>
+  </p>
+
+</div>

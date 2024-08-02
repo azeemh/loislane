@@ -1,0 +1,72 @@
+<%= form_with(model: theme) do |form| %>
+  <% if theme.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(theme.errors.count, "error") %> prohibited this theme from being saved:</h2>
+
+      <ul>
+        <% theme.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :backgroundcolor, style: "display: block" %>
+    <%= form.color_field :backgroundcolor %>
+  </div>
+
+  <div>
+    <%= form.label :headingcolor, style: "display: block" %>
+    <%= form.color_field :headingcolor %>
+  </div>
+
+  <div>
+    <%= form.label :textcolor, style: "display: block" %>
+    <%= form.color_field :textcolor %>
+  </div>
+
+  <div>
+    <%= form.label :primarycolor, style: "display: block" %>
+    <%= form.color_field :primarycolor %>
+  </div>
+
+  <div>
+    <%= form.label :secondarycolor, style: "display: block" %>
+    <%= form.color_field :secondarycolor %>
+  </div>
+
+  <div>
+    <%= form.label :tertiarycolor, style: "display: block" %>
+    <%= form.color_field :tertiarycolor %>
+  </div>
+
+  <div>
+    <%= form.label :quaternarycolor, style: "display: block" %>
+    <%= form.color_field :quaternarycolor %>
+  </div>
+
+  <div>
+    <%= form.label :logo, style: "display: block" %>
+    <%= form.file_field :logo %>
+  </div>
+
+  <div>
+    <%= form.label :maxwidth, style: "display: block" %>
+    <%= form.text_field :maxwidth %>
+  </div>
+
+  <div>
+    <%= form.label :customcss, style: "display: block" %>
+    <%= form.text_area :customcss %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

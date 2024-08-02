@@ -54,15 +54,19 @@
     </div>
   </div>
 
-  <div class="field">
+  <div class="field" style="display: flex-grid;">
     <%= form.label :image, style: "display: block" %>
+    <div style="flex: 1;">
     <% if story.image.attached? %>
     <br/>
     <label>Current Image: <%= story.image.filename %></label>
     <img class="uploaded" src="<%= url_for(story.image) %>">
     <% end %>
+    </div>
     <%= form.file_field :image %>
   </div>
+
+  <hr>
 
   <div class="field">
     <% if story.video.attached? %>
@@ -90,6 +94,16 @@
 
   <div class="field">
     <%= form.label :articleassets, style: "display: block" %>
+    <% if story.articleassets.attached? %>
+    <br/>
+    <label>Current Assets: </label>
+    <br>
+    <% story.articleassets.each do |articleasset| %>
+    <a href="<%= url_for(articleasset) %>"><%= articleasset.filename %></a>
+    <br>
+    <% end %>
+    
+    <% end %>
     <%= form.file_field :articleassets, multiple: true %>
   </div>
 

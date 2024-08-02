@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  backgroundcolor: MyString
+  headingcolor: MyString
+  textcolor: MyString
+  primarycolor: MyString
+  secondarycolor: MyString
+  tertiarycolor: MyString
+  quaternarycolor: MyString
+  maxwidth: MyString
+  customcss: MyText
+
+two:
+  name: MyString
+  backgroundcolor: MyString
+  headingcolor: MyString
+  textcolor: MyString
+  primarycolor: MyString
+  secondarycolor: MyString
+  tertiarycolor: MyString
+  quaternarycolor: MyString
+  maxwidth: MyString
+  customcss: MyText

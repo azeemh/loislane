@@ -10,5 +10,7 @@ class HomeController < ApplicationController
   end
 
   def dashboard
+    @setting = Setting.last
+    @themes = Theme.all
   end
 end

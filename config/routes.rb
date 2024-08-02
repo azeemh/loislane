@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :settings
+  resources :themes
   resources :categories
   resources :stories
   devise_for :users
