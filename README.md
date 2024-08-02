@@ -26,4 +26,6 @@ or
 (setup will create tables and run any migrations)
 
 
-#### If you'd like to stay up to date `git pull` and then `run rails db:migrate`
+#### If you'd like to stay up to date 
+
+`git pull` and then `run rails db:migrate`
