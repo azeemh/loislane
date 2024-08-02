@@ -11,3 +11,11 @@ postgresql 16.3
 uses active storage defaults -- local storage will work on ec2 (recommend using nginx), will add updates for external cloud providers so you can use on heroku or other ephemeral deployments.
 
 ## !--currently a work in progress--!
+
+#### First Time Setup: 
+First, `cd loislane` then `rails db:setup`
+
+If you need to drop the database and start from scratch:
+`rails db:drop` then `rails db:migrate`
+
+If you'd like to stay up to date `git pull` and then `run rails db:migrate`
