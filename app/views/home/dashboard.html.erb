@@ -24,6 +24,18 @@
 <% end %>
 <br/><br/>
 <%= link_to "New Theme", new_theme_path %>
+<br/>
+<br/>
+<h2>Categories</h2>
+<div style="display: inline-flex;">
+<% unless Category.nil? %>
+  <% Category.all.each do |category| %>
+	<a href="categories/<%= category.id %>/edit" style="text-decoration: none; border: none; border-bottom: 2px solid; border-color: <%= category.color %>; order: <%= category.order %>; padding: 2em;"><%= category.name.upcase + " & order: " + category.order.to_s %></a>
+  <% end %>
+<% end %>
+</div>
+<br/><br/>
+<%= link_to "New Category", new_category_path %>
 <!-- END IF USER IS EDITOR? -->
 
 <h2>Stories</h2>

@@ -37,7 +37,7 @@
   <nav>
     <% unless Category.nil? %>
       <% Category.all.each do |category| %>
-    <a href="/<%= category.name %>" style="border: none; border-bottom: 2px solid; border-color: <%= category.color %> ;"><%= category.name.upcase %></a>
+    <a href="/<%= category.name %>" style="border: none; border-bottom: 2px solid; border-color: <%= category.color %>; order: <%= category.order %>;"><%= category.name.upcase %></a>
       <% end %>
     <% end %>
   </nav>
