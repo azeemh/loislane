@@ -30,7 +30,7 @@ or
 
 ### If you'd like to stay up to date 
 
-`git pull` and then `run rails db:migrate`
+`git pull` and then run `rails db:migrate`
 
 #### Running the Server
 
