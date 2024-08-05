@@ -1,7 +1,5 @@
 <h1><%= @category.name.upcase %></h1>
 
-<p>Loop thru all stories in this category here.</p>
-
 <% @category.stories.each do |story| %>
 <%= render "stories/storycard", story: story %>
 <% end %>
