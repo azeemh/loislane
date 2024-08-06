@@ -1,12 +1,10 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Settings</h1>
 
 <div id="settings">
   <% @settings.each do |setting| %>
     <%= render setting %>
     <p>
-      <%= link_to "Show this setting", setting %>
+      <%= link_to "Goto this Setting", setting %>
     </p>
   <% end %>
 </div>

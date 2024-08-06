@@ -11,20 +11,22 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :newspapername, style: "display: block" %>
+  <div class="field">
+    <%= form.label :newspapername, "Newspaper Name", style: "display: block" %>
     <%= form.text_field :newspapername %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :tagline, style: "display: block" %>
     <%= form.text_field :tagline %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :theme_id, style: "display: block" %>
     <%= collection_select(:setting, :theme_id, Theme.all, :id, :name, prompt: true ) %>
   </div>
+
+  <br><br>
 
   <div>
     <%= form.submit %>

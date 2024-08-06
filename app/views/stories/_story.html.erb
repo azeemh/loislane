@@ -1,4 +1,4 @@
-<div id="<%= dom_id story %>">
+<div class="story" id="<%= dom_id story %>">
   <h1 class="title"><%= story.title %></h1>
   <img class="coverimage" src="<%= url_for(story.image) if story.image.attached? %>">
   <br/>

@@ -1,11 +1,7 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Stories</h1>
+s<h1>Stories</h1>
 
 <div id="stories">
   <% @stories.each do |story| %>
     <%= render "storycard", story: story %>
   <% end %>
 </div>
-
-<%= link_to "New story", new_story_path %>

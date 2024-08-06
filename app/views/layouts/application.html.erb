@@ -24,6 +24,43 @@
 
   </head>
 
+  <% if !Setting.first.nil? && !Setting.first.theme.nil? %>
+  <!-- CUSTOM THEME STYLES -->
+  <style>
+    
+    html {
+      background-color: <%= Setting.first.theme.backgroundcolor %>
+    }
+
+    p {
+      color: <%= Setting.first.theme.textcolor %>;
+    }
+
+    .story a {
+      color: <%= Setting.first.theme.primarycolor %>;
+    }
+
+    h1, h1 *, h2, h2 *, h3, h3 *, h4, h4 *, h5, h5 *, h6, h6 *, label, nav a, .title, a {
+      color: <%= Setting.first.theme.headingcolor %>;
+    }
+
+    strong {
+      color: <%= Setting.first.theme.secondarycolor %>;
+    }
+
+    em {
+      color: <%= Setting.first.theme.tertiarycolor %>;
+    }
+
+    footer, footer * {
+      color: <%= Setting.first.theme.quaternarycolor %>;
+    }
+
+
+
+  </style>
+  <% end %>
+
   <div id="logo">
     <a href="/">
       <% if !Setting.first.nil? && Setting.first.theme.logo.attached? %>
