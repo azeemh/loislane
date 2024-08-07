@@ -107,17 +107,26 @@
 
   <div class="field">
     <%= form.label :factchecked, style: "display: block" %>
-    <%= form.check_box :factchecked %>
+    <div class="toggle-switch">
+      <%= form.check_box :factchecked, class: 'toggle-checkbox', id: 'factchecked' %>
+      <label for="factchecked" class="toggle-label">
+    </div>
   </div>
 
   <div class="field">
     <%= form.label :proofread, style: "display: block" %>
-    <%= form.check_box :proofread %>
+    <div class="toggle-switch">
+      <%= form.check_box :proofread, class: 'toggle-checkbox', id: 'proofread' %>
+      <label for="proofread" class="toggle-label">
+    </div>
   </div>
 
   <div class="field">
     <%= form.label :enableautopublish, style: "display: block" %>
-    <%= form.check_box :enableautopublish %>
+    <div class="toggle-switch">
+      <%= form.check_box :enableautopublish, class: 'toggle-checkbox', id: 'enableautopublish' %>
+      <label for="enableautopublish" class="toggle-label">
+    </div>
   </div>
 
   <div class="field">
@@ -127,7 +136,10 @@
 
   <div class="field">
     <%= form.label :publish, style: "display: block" %>
-    <%= form.check_box :publish %>
+    <div class="toggle-switch">
+      <%= form.check_box :publish, class: 'toggle-checkbox', id: 'publish' %>
+      <label for="publish" class="toggle-label">
+    </div>
   </div>
 
   <div class="field">

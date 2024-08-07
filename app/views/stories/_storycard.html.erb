@@ -1,5 +1,22 @@
 <div class="storycard">
-  <img class="coverimage" src="<%= url_for(story.image) if story.image.attached? %>">
-  <h1><a href="stories/<%= story.slug %>"><%= story.title %></a></h1>
-  <div><%= story.content.truncate(250).html_safe %><div> 
+  <h1><a href="stories/<%= story.slug %>" style="text-decoration: none;"><%= story.title %></a></h1>
+  
+  <% if story.image.attached? %>
+  <a href="stories/<%= story.slug %>" style="text-decoration: none;"><img class="coverimage" src="<%= url_for(story.image) %>"></a>
+  <% end %>
+
+  <% if story.audio.attached? %>
+  <audio class="coveraudio" controls>
+    <source src="<%= url_for(story.audio) %>">
+  </audio>
+  <% end %>
+
+  <% if story.video.attached? %>
+  <video class="covervideo" controls>
+    <source src="<%= url_for(story.video) %>">
+  </video>
+  <% end %>
+
+  
+  <div><%= story.content.truncate(500).html_safe %></div> 
 </div>
