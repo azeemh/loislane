@@ -29,11 +29,8 @@
   <!-- CUSTOM THEME STYLES -->
   <style>
     
-    html {
-      background-color: <%= Setting.first.theme.backgroundcolor %>
-    }
-
-    p {
+    html, p, input, label, nav a {
+      background-color: <%= Setting.first.theme.backgroundcolor %>;
       color: <%= Setting.first.theme.textcolor %>;
     }
 
@@ -41,11 +38,11 @@
       color: <%= Setting.first.theme.primarycolor %>;
     }
 
-    h1, h1 *, h2, h2 *, h3, h3 *, h4, h4 *, h5, h5 *, h6, h6 *, label, nav a, .title, a {
+    h1, h1 *, .title, a {
       color: <%= Setting.first.theme.headingcolor %>;
     }
 
-    strong {
+    h2, h2 *, h3, h3 *, h4, h4 *, h5, h5 *, h6, h6 *, strong {
       color: <%= Setting.first.theme.secondarycolor %>;
     }
 

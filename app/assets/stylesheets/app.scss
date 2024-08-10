@@ -145,7 +145,7 @@ input[type="file"] {
 
 #logo a img {
 	max-height: 200px;
-	width: auto;
+	max-width: 100%;
 }
 
 nav {
@@ -165,13 +165,14 @@ nav a {
 }
 
 // Headlines //
-
+h1 {
+	font-size: 5rem;
+	@media only screen and (max-width: $maxwidth) {
+		font-size: 5vw;
+	}
+}
 
 // Core Elements //
-
-.story {
-
-}
 
 .storycard {
 	display: block;
@@ -230,6 +231,10 @@ nav a {
     position: relative;
     width: 100%;
     min-height: 720px;
+}
+
+.story {
+	font-size: 1.25rem;
 }
 
 

@@ -1,36 +1,31 @@
 <div class="story" id="<%= dom_id story %>">
-  <h3 class="title"><%= story.category.name.upcase %></h3>
+  <h3 class="category"><%= story.category.name.upcase %></h3>
   <h1 class="title"><%= story.title %></h1>
-  <img class="coverimage" src="<%= url_for(story.image) if story.image.attached? %>">
+  <% if story.video.attached? %>
+  <video class="covervideo" controls poster="<%= url_for(story.image) if story.image.attached? %>">
+    <source src="<%= url_for(story.video) %>">
+  </video>
+  <% elsif story.image.attached? %>
+  <img class="coverimage" src="<%= url_for(story.image) %>">
+  <% end %>
   <br/>
   <br/>
   <% if story.audio.attached? %>
   <br/>
-  <label>Current Audio: <%= story.audio.filename %></label>
+  <label>Audio: <%= story.audio.filename %></label>
   <audio class="coveraudio" controls>
     <source src="<%= url_for(story.audio) %>">
   </audio>
   <% end %>
+  <br/>
+  <br/>
+  
+
   <div class="content"><%= story.content.html_safe %></div>
 
   <p>
     <strong>Tags:</strong>
     <%= story.tags %>
-  </p>
-
-  <p>
-    <strong>Image:</strong>
-    <%= link_to story.image.filename, story.image if story.image.attached? %>
-  </p>
-
-  <p>
-    <strong>Video:</strong>
-    <%= link_to story.video.filename, story.video if story.video.attached? %>
-  </p>
-
-  <p>
-    <strong>Audio:</strong>
-    <%= link_to story.audio.filename, story.audio if story.audio.attached? %>
   </p>
 
   <p>
