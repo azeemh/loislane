@@ -1,22 +1,36 @@
 <div class="storycard">
   <h1><a href="stories/<%= story.slug %>" style="text-decoration: none;"><%= story.title %></a></h1>
   
-  <% if story.image.attached? %>
-  <a href="stories/<%= story.slug %>" style="text-decoration: none;"><img class="coverimage" src="<%= url_for(story.image) %>"></a>
-  <% end %>
-
-  <% if story.audio.attached? %>
-  <audio class="coveraudio" controls>
-    <source src="<%= url_for(story.audio) %>">
-  </audio>
-  <% end %>
-
   <% if story.video.attached? %>
-  <video class="covervideo" controls>
-    <source src="<%= url_for(story.video) %>">
-  </video>
+  <div class="videocard">
+    <div class="videopane">
+      <% if story.image.attached? %>
+      <a href="stories/<%= story.slug %>" style="text-decoration: none;"><img class="coverimage" src="<%= url_for(story.image) %>"><div class="covertext"><%= story.content.truncate(300).html_safe %> (<span style="text-decoration: underline;">Continue Reading</span>)</div></a>
+      <% end %>
+    </div>
+    <div class="videowrapper">
+      <video class="covervideo" controls>
+        <source src="<%= url_for(story.video) %>">
+      </video>
+    </div>
+    
+  </div>
+  <% elsif story.image.attached? %>
+  <div class="imagecard">
+    <a href="stories/<%= story.slug %>" style="text-decoration: none;">
+      <img class="coverimage" src="<%= url_for(story.image) %>">
+      <% if story.audio.attached? && !story.video.attached? %>
+      <audio class="coveraudio" controls>
+        <source src="<%= url_for(story.audio) %>">
+      </audio>
+      <% end %>
+      <div class="covertext">
+        <%= story.content.truncate(600).html_safe %> (<span style="text-decoration: underline;">Continue Reading</span>)
+      </div>
+    </a>
+  </div>
   <% end %>
 
-  
-  <div><%= story.content.truncate(500).html_safe %></div> 
+
+
 </div>

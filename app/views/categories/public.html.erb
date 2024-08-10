@@ -1,4 +1,4 @@
-<h1><%= @category.name.upcase %></h1>
+<h3><%= @category.name.upcase %></h3>
 
 <% @category.stories.each do |story| %>
 <%= render "stories/storycard", story: story %>

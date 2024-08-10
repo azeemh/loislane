@@ -164,6 +164,9 @@ nav a {
 	flex-grow: 2;
 }
 
+// Headlines //
+
+
 // Core Elements //
 
 .story {
@@ -172,7 +175,7 @@ nav a {
 
 .storycard {
 	display: block;
-	min-width: 200px;
+	width: 100%;
 }
 
 .coverimage {
@@ -190,7 +193,34 @@ nav a {
 	height: auto;
 }
 
+.covertext {
+	font-size: 2rem;
+}
 
+.videocard {
+	display: inline-flex;
+	.videowrapper {
+		width: 73%;
+		padding: 1%;
+	}
+	.videopane {
+		width: 33%;
+		padding: 1%;
+	}
+	@media only screen and (max-width: $maxwidth) {
+		.covertext {
+			font-size: 1.5vw;
+		}
+	}
+}
+
+.imagecard {
+	@media only screen and (max-width: $maxwidth) {
+		.covertext {
+			font-size: 2vw;
+		}
+	}
+}
 
 
 #toolbar {
