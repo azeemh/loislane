@@ -29,7 +29,7 @@
   <!-- CUSTOM THEME STYLES -->
   <style>
     
-    html, p, input, label, nav a {
+    html, p, input, label, nav a, blockquote, code, img, table, pre, h1, h2, h3, h4, h5, h6 {
       background-color: <%= Setting.first.theme.backgroundcolor %>;
       color: <%= Setting.first.theme.textcolor %>;
     }
@@ -38,15 +38,15 @@
       color: <%= Setting.first.theme.primarycolor %>;
     }
 
-    h1, h1 *, .title, a {
+    h1, h1 *, h2, h2 *, .title, a {
       color: <%= Setting.first.theme.headingcolor %>;
     }
 
-    h2, h2 *, h3, h3 *, h4, h4 *, h5, h5 *, h6, h6 *, strong {
+    h3, h3 *, h4, h4 *, strong {
       color: <%= Setting.first.theme.secondarycolor %>;
     }
 
-    em {
+    em, h5, h5 *, h6, h6 * {
       color: <%= Setting.first.theme.tertiarycolor %>;
     }
 
@@ -81,7 +81,9 @@
   <p class="alert"><%= alert %></p>
 
   <body>
-    <%= yield %>
+    <div id="supercalafragalisticexpialadoshus">
+      <%= yield %>
+    </div>
   </body>
 
   <footer>

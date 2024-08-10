@@ -18,7 +18,7 @@ a {
 }
 
 body {
-	padding: 3rem;
+	padding: 1rem;
 	max-width: $maxwidth; // could be 100% or whatever number you feel works best
 	margin: auto;
 }
@@ -81,6 +81,11 @@ input[type="text"] {
 
 input[type="file"] {
 	text-align: left;
+}
+
+input[type="submit"] {
+	border-radius: 1rem;
+	border: 2px solid;
 }
 
 //slider inputs for checkboxes
@@ -172,6 +177,21 @@ h1 {
 	}
 }
 
+h2 {
+	font-size: 3rem;
+	@media only screen and (max-width: $maxwidth) {
+		font-size: 3vw;
+	}
+}
+
+h3 {
+	font-size: 1.5rem;
+	@media only screen and (max-width: $maxwidth) {
+		font-size: 1.5vw;
+	}
+}
+
+
 // Core Elements //
 
 .storycard {
@@ -235,6 +255,11 @@ h1 {
 
 .story {
 	font-size: 1.25rem;
+}
+
+#supercalafragalisticexpialadoshus {
+	width: 90%;
+	padding: 5%;
 }
 
 

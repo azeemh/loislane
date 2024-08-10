@@ -1,5 +1,5 @@
 <div class="story" id="<%= dom_id story %>">
-  <h3 class="category"><%= story.category.name.upcase %></h3>
+  <h3 class="category" style="color: <%= story.category.color %>;"><%= story.category.name.upcase %></h3>
   <h1 class="title"><%= story.title %></h1>
   <% if story.video.attached? %>
   <video class="covervideo" controls poster="<%= url_for(story.image) if story.image.attached? %>">
