@@ -46,6 +46,8 @@ or
 
 ### ~~Users can make custom color palettes, and custom css themes~~
 
+### ~~Users can add categories and modify the order of their layout~~
+
 ### ~~Users can upload audio, video, and images~~
 
 ### ~~Users can upload story specific files and assets~~
