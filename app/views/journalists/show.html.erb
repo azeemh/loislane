@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @journalist %>
+
+<div>
+  <%= link_to "Edit this journalist", edit_journalist_path(@journalist) %> |
+  <%= link_to "Back to journalists", journalists_path %>
+
+  <%= button_to "Destroy this journalist", @journalist, method: :delete %>
+</div>

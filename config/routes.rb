@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :journalists
   resources :settings
   resources :themes
   resources :categories
