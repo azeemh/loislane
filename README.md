@@ -42,9 +42,9 @@ or
 
 ## Allows a single person to start a newspaper, and manage it as it grows and more people join.
 
-### ~~Users can make custom color palettes, and custom css themes~~
-
 ### ~~Includes a dynamic, responsive css layout~~
+
+### ~~Users can make custom color palettes, and custom css themes~~
 
 ### ~~Users can upload audio, video, and images~~
 
