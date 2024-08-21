@@ -61,4 +61,4 @@ or
 ### Provide full rss reading and writing capability, so readers can access the newspaper via their favorite RSS reader. Vloggers and Podcasters may find this of interest as we support audio and video uploads. 
 (Evaluate if possible to syndicate another RSS feed of a sibling site/news outlet or fellow journalist and if users are interested in such a feature.)
 
-### integrate flac audio and other cross platform audio and video fallback supports and polyfills for older browsers
+### integrate flac audio and other highfi cross platform audio and video fallback supports and polyfills for older browsers
