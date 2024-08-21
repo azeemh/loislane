@@ -37,3 +37,27 @@ or
 `rails s`
 
 ## This is currently a work in progress and not ready to deploy a real newspaper yet.
+
+# SPEC/TODO:
+
+## Allows a single person to start a newspaper, and manage it as it grows and more people join.
+
+### ~~Users can make custom color palettes, and custom css themes~~
+
+### ~~Users can upload audio, video, and images~~
+
+### ~~Users can upload story specific files and assets~~
+
+### ~~Stories have unique slugs with friendly ids~~
+
+### ~~Stories have WYSIWYG editing with full html capability~~
+
+### Stories can be set to be auto or prepublished (variables set, validations in progress)
+
+### Require user to make journalist account in order to create a new story and require user to have journalist account with editor status to manage theme etc
+
+### audits are available for transparency and story history to keep audiences informed of corrections and to keep journalists honest. (an audit gem was already added, wip)
+
+### provide full rss reading and writing capability, so readers can access the newspaper via their favorite RSS reader. Vloggers and Podcasters may find this of interest as we support audio and video uploads
+
+### integrate flac audio and other cross platform audio and video fallback supports and polyfills for older browsers
