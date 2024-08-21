@@ -44,6 +44,8 @@ or
 
 ### ~~Users can make custom color palettes, and custom css themes~~
 
+### ~~Includes a dynamic, responsive css layout~~
+
 ### ~~Users can upload audio, video, and images~~
 
 ### ~~Users can upload story specific files and assets~~
