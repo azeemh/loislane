@@ -60,7 +60,9 @@ or
 
 ### Require user to make journalist account in order to create or edit a story and require user to have journalist account with editor status to manage themes, newspaper settings, admin, etc
 
-### Ensure audits are available for transparency and story history to keep audiences informed of corrections and to keep journalists honest. (an audit gem was already added, wip)
+### Journalist Dashboard (WIP) -- Fact Checks, Proofreading, & Editorial QA Management
+
+### Ensure audits are available for transparency and story history to keep audiences informed of corrections and to keep journalists honest. (audited gem was already added, wip)
 
 ### Provide full rss reading and writing capability, so readers can access the newspaper via their favorite RSS reader. Vloggers and Podcasters may find this of interest as we support audio and video uploads. 
 (Evaluate if possible to syndicate another RSS feed of a sibling site/news outlet or fellow journalist and if users are interested in such a feature.)
