@@ -54,7 +54,7 @@ or
 
 ### Stories can be set to be auto or prepublished (variables set, validations in progress)
 
-### Require user to make journalist account in order to create a new story and require user to have journalist account with editor status to manage theme etc
+### Require user to make journalist account in order to create or edit a story and require user to have journalist account with editor status to manage themes, newspaper settings, admin, etc
 
 ### audits are available for transparency and story history to keep audiences informed of corrections and to keep journalists honest. (an audit gem was already added, wip)
 
