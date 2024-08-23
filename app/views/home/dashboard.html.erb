@@ -6,6 +6,7 @@
 <% if @setting.nil? %>
 <%= link_to "New Settings", new_setting_path %>
 <% else %>
+<label>Name & Tagline:</label>
 <h3><%= @setting.newspapername %></h3>
 <em><%= @setting.tagline %></em>
 <br/>
@@ -39,4 +40,9 @@
 <!-- END IF USER IS EDITOR? -->
 
 <h2>Stories</h2>
+<% unless Story.nil? %>
+  <% Story.all.each do |story| %>
+	<h5><%= unless story.publish? then "Draft: " end %><a href="stories/<%= story.slug %>"><%= story.title %></a> | <a href="stories/<%= story.slug %>/edit">EDIT</a></h5>
+  <% end %>
+<% end %>
 <%= link_to "New Story", new_story_path %>

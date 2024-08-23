@@ -58,7 +58,9 @@ or
 
 ### Stories can be set to be auto or prepublished (variables set, validations in progress)
 
-### Require user to make journalist account in order to create or edit a story and require user to have journalist account with editor status to manage themes, newspaper settings, admin, etc
+### ~~Require user to make journalist account in order to create or edit a story and require user to have journalist account with editor status to manage themes, newspaper settings, admin, etc~~
+
+### setup initial rake task and add readme instructions so people can create the first admin user editor as a 1 time setup and not need to fiddle with the console.
 
 ### Journalist Dashboard (WIP) -- Fact Checks, Proofreading, & Editorial QA Management
 
@@ -68,3 +70,6 @@ or
 (Evaluate if possible to syndicate another RSS feed of a sibling site/news outlet or fellow journalist and if users are interested in such a feature.)
 
 ### integrate flac audio and other HIFI cross platform audio and video fallback supports and polyfills for older browsers
+
+### add livestream widgets and customization: icecast player, twitch, youtube, and tiktok live, + custom code option so future platforms can also be embedded.
+

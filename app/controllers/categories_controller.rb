@@ -1,6 +1,14 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: %i[ public ]
+  before_action :only_editors
+
+  def only_editors
+    unless current_user.journalist.is_editor?
+      flash[:alert] = 'You are not signed in as an authorized editor of this newspaper.'
+      redirect_back(fallback_location: root_path)
+    end
+  end
 
   # GET /categories or /categories.json
   def index

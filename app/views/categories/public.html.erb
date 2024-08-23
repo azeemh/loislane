@@ -1,5 +1,5 @@
 <h3 style="color: <%= @category.color %>;"><%= @category.name.upcase %></h3>
 
-<% @category.stories.each do |story| %>
+<% @category.stories.published.each do |story| %>
 <%= render "stories/storycard", story: story %>
 <% end %>

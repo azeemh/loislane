@@ -1,6 +1,14 @@
 <div class="story" id="<%= dom_id story %>">
   <h3 class="category" style="color: <%= story.category.color %>;"><%= story.category.name.upcase %></h3>
   <h1 class="title"><%= story.title %></h1>
+
+  <h4>By <%= story.user&.journalist&.name %></h4>
+  <% if story.publish? %>
+  <h5><%= story.publishdate.strftime("%A, %B, %d, %Y %H:%M") %></h5>
+  <% else %>
+  <h5>First Drafted: <%= story.created_at.strftime("%A, %B, %d, %Y %H:%M") %></h5>
+  <% end %>
+
   <% if story.video.attached? %>
   <video class="covervideo" controls poster="<%= url_for(story.image) if story.image.attached? %>">
     <source src="<%= url_for(story.video) %>">
@@ -23,56 +31,11 @@
 
   <div class="content"><%= story.content.html_safe %></div>
 
+  <% unless (story.tags.nil? || story.tags == "") %>
   <p>
     <strong>Tags:</strong>
     <%= story.tags %>
   </p>
-
-  <p>
-    <strong>Articleassets:</strong>
-    <% story.articleassets.each do |articleasset| %>
-      <div><%= link_to articleasset.filename, articleasset %></div>
-    <% end %>
-  </p>
-
-  <p>
-    <strong>Factchecked:</strong>
-    <%= story.factchecked %>
-  </p>
-
-  <p>
-    <strong>Proofread:</strong>
-    <%= story.proofread %>
-  </p>
-
-  <p>
-    <strong>Enableautopublish:</strong>
-    <%= story.enableautopublish %>
-  </p>
-
-  <p>
-    <strong>Autopublishdate:</strong>
-    <%= story.autopublishdate %>
-  </p>
-
-  <p>
-    <strong>Publish:</strong>
-    <%= story.publish %>
-  </p>
-
-  <p>
-    <strong>Publishdate:</strong>
-    <%= story.publishdate %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= story.user_id %>
-  </p>
-
-  <p>
-    <strong>Category:</strong>
-    <%= story.category.name %>
-  </p>
+  <% end %>
 
 </div>

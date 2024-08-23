@@ -1,6 +1,14 @@
 class JournalistsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_journalist, only: %i[ show edit update destroy ]
+  before_action :only1, only: [:new]
+
+  def only1
+    unless current_user.journalist == nil
+      flash[:alert] = 'You already have a journalist account!'
+      redirect_to journalists_path
+    end
+  end
 
   # GET /journalists or /journalists.json
   def index
@@ -23,6 +31,7 @@ class JournalistsController < ApplicationController
   # POST /journalists or /journalists.json
   def create
     @journalist = Journalist.new(journalist_params)
+    @journalist.user = current_user
 
     respond_to do |format|
       if @journalist.save

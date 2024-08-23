@@ -6,6 +6,8 @@ class Story < ApplicationRecord
   has_one_attached :audio
   has_many_attached :articleassets
 
+  scope :published, -> {where(publish: true)}
+
   audited
 
   extend FriendlyId

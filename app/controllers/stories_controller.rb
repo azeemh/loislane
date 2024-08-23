@@ -2,10 +2,18 @@ require 'date'
 class StoriesController < ApplicationController
   before_action :set_story, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :only_journalists, only: [:new]
+
+  def only_journalists
+    if current_user.journalist.nil?
+      flash[:alert] = 'You have not setup your journalist account yet. <a href="/journalists/new">Make A Journalist Account</a>'
+      redirect_back(fallback_location: root_path)
+    end
+  end
 
   # GET /stories or /stories.json
   def index
-    @stories = Story.all
+    @stories = Story.all.published
   end
 
   # GET /stories/1 or /stories/1.json
@@ -25,10 +33,6 @@ class StoriesController < ApplicationController
   def create
     @story = Story.new(story_params)
     @story.user = current_user
-
-    puts 
-    puts '*******************************************************************************'
-    puts @story.publishdate
 
     if @story.publish == true 
       @story.publishdate = DateTime.now
