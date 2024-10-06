@@ -6,6 +6,12 @@ class Story < ApplicationRecord
   has_one_attached :audio
   has_many_attached :articleassets
 
+  validates :autopublishdate, presence: true, if: :enableautopublish?
+  validates :title, presence: true, uniqueness: { case_sensitive: false }
+  validates :content, presence:true
+
+
+
   scope :published, -> {where(publish: true)}
 
   audited
