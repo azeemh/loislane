@@ -10,9 +10,16 @@ class Story < ApplicationRecord
   validates :title, presence: true, uniqueness: { case_sensitive: false }
   validates :content, presence:true
 
-
-
   scope :published, -> {where(publish: true)}
+  scope :to_be_published, -> {where(enableautopublish: true)}
+
+  def autopublish
+    if DateTime.now >= self.autopublishdate
+      self.publish = true
+      self.publishdate = self.autopublishdate
+      self.save!
+    end
+  end
 
   audited
 

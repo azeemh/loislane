@@ -23,41 +23,42 @@
 
     <%= javascript_importmap_tags %>
 
+    <% if !Setting.first.nil? && !Setting.first.theme.nil? %>
+
+    <%= Setting.first.theme.customhead.html_safe %>
+    <!-- CUSTOM THEME STYLES -->
+    <style>
+      
+      html, p, input, label, nav a, blockquote, code, img, table, pre, h1, h2, h3, h4, h5, h6 {
+        background-color: <%= Setting.first.theme.backgroundcolor %>;
+        color: <%= Setting.first.theme.textcolor %>;
+      }
+
+      .story a {
+        color: <%= Setting.first.theme.primarycolor %>;
+      }
+
+      .title, a, h1, h2, h3, h4, h5, h6 {
+        color: <%= Setting.first.theme.headingcolor %>;
+      }
+
+      strong, em {
+        color: <%= Setting.first.theme.secondarycolor %>;
+      }
+
+       {
+        color: <%= Setting.first.theme.tertiarycolor %>;
+      }
+
+      footer, footer * {
+        color: <%= Setting.first.theme.quaternarycolor %>;
+      }
+
+      <%= Setting.first.theme.customcss.html_safe %>
+    </style>
+    <% end %>
+
   </head>
-
-  <% if !Setting.first.nil? && !Setting.first.theme.nil? %>
-  <!-- CUSTOM THEME STYLES -->
-  <style>
-    
-    html, p, input, label, nav a, blockquote, code, img, table, pre, h1, h2, h3, h4, h5, h6 {
-      background-color: <%= Setting.first.theme.backgroundcolor %>;
-      color: <%= Setting.first.theme.textcolor %>;
-    }
-
-    .story a {
-      color: <%= Setting.first.theme.primarycolor %>;
-    }
-
-    .title, a, h1, h2, h3, h4, h5, h6 {
-      color: <%= Setting.first.theme.headingcolor %>;
-    }
-
-    strong, em {
-      color: <%= Setting.first.theme.secondarycolor %>;
-    }
-
-     {
-      color: <%= Setting.first.theme.tertiarycolor %>;
-    }
-
-    footer, footer * {
-      color: <%= Setting.first.theme.quaternarycolor %>;
-    }
-
-
-
-  </style>
-  <% end %>
 
   <div id="logo">
     <a href="/">

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_21_225607) do
+ActiveRecord::Schema[7.1].define(version: 2024_10_09_031506) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -136,6 +136,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_21_225607) do
     t.text "customcss"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "customhead"
     t.index ["name"], name: "index_themes_on_name", unique: true
   end
 

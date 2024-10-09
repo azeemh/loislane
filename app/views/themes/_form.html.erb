@@ -62,6 +62,11 @@
   </div>
 
   <div class="field">
+    <%= form.label "Custom Header Content (For Fonts, Scripts, Charts, JS libraries, ETC)", style: "display: block" %>
+    <%= form.text_area :customhead %>
+  </div>
+
+  <div class="field">
     <%= form.label :customcss, style: "display: block" %>
     <%= form.text_area :customcss %>
   </div>
