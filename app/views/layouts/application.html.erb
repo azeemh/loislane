@@ -25,7 +25,7 @@
 
     <% if !Setting.first.nil? && !Setting.first.theme.nil? %>
 
-    <%= Setting.first.theme.customhead.html_safe %>
+    <%= Setting.first.theme.customhead.html_safe unless (Setting.first.theme.customcss.nil? || Setting.first.theme.customcss == "" )  %>
     <!-- CUSTOM THEME STYLES -->
     <style>
       
