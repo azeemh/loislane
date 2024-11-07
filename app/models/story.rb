@@ -1,10 +1,16 @@
 class Story < ApplicationRecord
+  include AppendToHasManyAttached['articleassets'] # you can include it before or after, order does not matter, explanation below
+
   belongs_to :user
   belongs_to :category
   has_one_attached :image
   has_one_attached :video
   has_one_attached :audio
   has_many_attached :articleassets
+
+  def append_files=(attachables)
+    articleassets.attach(attachables)
+  end
 
   validates :autopublishdate, presence: true, if: :enableautopublish?
   validates :title, presence: true, uniqueness: { case_sensitive: false }
