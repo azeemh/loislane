@@ -1,4 +1,5 @@
 <div id="<%= dom_id category %>">
+  <!-- OLD 
   <p>
     <strong>Name:</strong>
     <%= category.name %>
@@ -8,5 +9,7 @@
     <strong>Color:</strong>
     <%= category.color %>
   </p>
+-->
+<a href="categories/<%= category.id %>/edit" style="text-decoration: none; border: none; border-bottom: 2px solid; border-color: <%= category.color %>; order: <%= category.order %>; padding: 2em;"><%= category.name.upcase + " & order: " + category.order.to_s %></a>
 
 </div>

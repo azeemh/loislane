@@ -1,4 +1,5 @@
 <div id="<%= dom_id theme %>">
+  <!-- OLD
   <p>
     <strong>Name:</strong>
     <%= theme.name %>
@@ -58,5 +59,17 @@
     <strong>Customcss:</strong>
     <%= theme.customcss %>
   </p>
+-->
+<div style="padding: 2em;">
+  <%= link_to theme.name, edit_theme_path(theme) %>
+  <br/>
+  <div style="font-size: 4rem;">
+    <span style="color: <%= theme.backgroundcolor %>">■</span><span style="color: <%= theme.headingcolor %>">■</span><span style="color: <%= theme.textcolor %>">■</span><span style="color: <%= theme.primarycolor %>">■</span><span style="color: <%= theme.secondarycolor %>">■</span><span style="color: <%= theme.tertiarycolor %>">■</span><span style="color: <%= theme.quaternarycolor %>">■</span> 
+  </div>
+  <% if theme.logo.attached? %>
+  <img style="max-height: 200px; width: auto;" src="<%= url_for(theme.logo) %>"> 
+  <% end %> 
+</div>
+
 
 </div>

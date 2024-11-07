@@ -5,27 +5,48 @@
   <div class="videocard">
     <div class="videopane">
       <% if story.image.attached? %>
-      <a href="stories/<%= story.slug %>" style="text-decoration: none;"><img class="coverimage" src="<%= url_for(story.image) %>"><div class="covertext"><%= story.content.truncate(300).html_safe %> (<span style="text-decoration: underline;">Continue Reading</span>)</div></a>
-      <% end %>
-    </div>
-    <div class="videowrapper">
+      <video class="covervideo" controls poster="<%= url_for(story.image) if story.image.attached? %>">
+        <source src="<%= url_for(story.video) %>">
+      </video>
+      <% else %>
       <video class="covervideo" controls>
         <source src="<%= url_for(story.video) %>">
       </video>
+      <% end %>
+      <div class="covertext"><p><%= story.content.truncate(300).html_safe %> (<a href="stories/<%= story.slug %>" style="text-decoration: underline;">Continue Reading</a>)</p>
+      </div>
     </div>
     
   </div>
   <% elsif story.image.attached? %>
   <div class="imagecard">
     <a href="stories/<%= story.slug %>" style="text-decoration: none;">
-      <img class="coverimage" src="<%= url_for(story.image) %>">
-      <% if story.audio.attached? && !story.video.attached? %>
+      <img class="coverimage" src="<%= url_for(story.image) %>"></a>
+    <% if story.audio.attached? && !story.video.attached? %>
+    <audio class="coveraudio" controls>
+      <source src="<%= url_for(story.audio) %>">
+    </audio>
+    <% end %>
+    <div class="covertext">
+      <p><%= story.content.truncate(600).html_safe %> (<a href="stories/<%= story.slug %>" style="text-decoration: underline;">Continue Reading</a>)</p>
+    </div>
+  </div>
+  <% elsif story.audio.attached? %>
+  <div class="audiocard">
+    <a href="stories/<%= story.slug %>" style="text-decoration: none;">
       <audio class="coveraudio" controls>
         <source src="<%= url_for(story.audio) %>">
       </audio>
-      <% end %>
       <div class="covertext">
-        <%= story.content.truncate(600).html_safe %> (<span style="text-decoration: underline;">Continue Reading</span>)
+        <p><%= story.content.truncate(600).html_safe %> (<a href="stories/<%= story.slug %>" style="text-decoration: underline;">Continue Reading</a>)</p>
+      </div>
+    </a>
+  </div>
+  <% else %>
+  <div class="textcard">
+    <a href="stories/<%= story.slug %>" style="text-decoration: none;">
+      <div class="covertext">
+        <p><%= story.content.truncate(1200).html_safe %> (<a href="stories/<%= story.slug %>" style="text-decoration: underline;">Continue Reading</a>)</p>
       </div>
     </a>
   </div>

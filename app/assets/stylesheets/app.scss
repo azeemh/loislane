@@ -8,7 +8,6 @@ $maxwidth: 1920px;
 // mnml defaults //
 
 *, html {
-	font-family: sans-serif;
 	text-decoration: none;
 }
 
@@ -167,6 +166,7 @@ nav a {
 	margin: 1rem;
 	text-align: center;
 	flex-grow: 2;
+	font-size: 2rem;
 }
 
 // Headlines //
@@ -178,16 +178,16 @@ h1 {
 }
 
 h2 {
-	font-size: 3rem;
+	font-size: 4rem;
 	@media only screen and (max-width: $maxwidth) {
 		font-size: 3vw;
 	}
 }
 
 h3 {
-	font-size: 1.5rem;
+	font-size: 3rem;
 	@media only screen and (max-width: $maxwidth) {
-		font-size: 1.5vw;
+		font-size: 1.75vw;
 	}
 }
 
@@ -213,28 +213,35 @@ h3 {
 	width: 100%;
 }
 
-.covertext {
-	font-size: 2rem;
-}
-
 .videocard {
 	display: inline-flex;
-	.videowrapper {
-		width: 73%;
-		padding: 1%;
-	}
 	.videopane {
-		width: 33%;
+		width: 98%;
 		padding: 1%;
 	}
 	@media only screen and (max-width: $maxwidth) {
 		.covertext {
-			font-size: 1.5vw;
+			font-size: 2vw;
 		}
 	}
 }
 
 .imagecard {
+	@media only screen and (max-width: $maxwidth) {
+		.covertext {
+			font-size: 2vw;
+		}
+	}
+}
+
+.audiocard {
+	@media only screen and (max-width: $maxwidth) {
+		.covertext {
+			font-size: 2vw;
+		}
+	}
+}
+.textcard {
 	@media only screen and (max-width: $maxwidth) {
 		.covertext {
 			font-size: 2vw;

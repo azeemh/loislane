@@ -12,11 +12,13 @@ class Story < ApplicationRecord
 
   scope :published, -> {where(publish: true)}
   scope :to_be_published, -> {where(enableautopublish: true)}
+  scope :drafts, -> {where(publish: false)}
 
   def autopublish
     if DateTime.now >= self.autopublishdate
       self.publish = true
       self.publishdate = self.autopublishdate
+      self.enableautopublish = false #disable after successful run
       self.save!
     end
   end

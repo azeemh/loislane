@@ -142,6 +142,10 @@
     </div>
   </div>
 
+  <div>
+    <label>Published At: <%= story.publishdate.strftime("%A, %B, %d, %Y %H:%M") unless story.publishdate.nil? %></label>
+  </div>
+
   <div class="field">
     <%= form.label :category_id, style: "display: block" %>
     <%= collection_select(:story, :category_id, Category.all, :id, :name, prompt: true ) %>

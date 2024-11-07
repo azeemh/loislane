@@ -1,0 +1,7 @@
+<h3>Drafts</h3>
+
+<div id="stories">
+  <% @stories.each do |story| %>
+    <%= render "storycard", story: story %>
+  <% end %>
+</div>

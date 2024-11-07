@@ -13,7 +13,15 @@ class StoriesController < ApplicationController
 
   # GET /stories or /stories.json
   def index
-    @stories = Story.all.published
+    Story.to_be_published.each do |s|
+      puts s.title + " | " + s.autopublishdate.to_s
+      s.autopublish if DateTime.now > s.autopublishdate
+    end
+    @stories = Story.published
+  end
+
+  def drafts
+    @stories = Story.drafts
   end
 
   # GET /stories/1 or /stories/1.json
@@ -54,8 +62,11 @@ class StoriesController < ApplicationController
     respond_to do |format|
       if @story.update(story_params)
 
+        if @story.publish == false 
+          @story.publishdate = nil
+          @story.save! 
         #sets the publish date of a news story to day it was first published. (saved with publish = true)
-        if @story.publish? && @story.publishdate.nil?
+        elsif @story.publish && @story.publishdate.nil?
           @story.publishdate = DateTime.now
           @story.save
         end

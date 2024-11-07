@@ -1,0 +1,50 @@
+to build rake task with themes later
+[#<Theme:0x000072c7ed201cf0
+  id: 1,
+  name: "Vice City Stories",
+  backgroundcolor: "#000000",
+  headingcolor: "#ffffff",
+  textcolor: "#c0bfbc",
+  primarycolor: "#8ff0a4",
+  secondarycolor: "#99c1f1",
+  tertiarycolor: "#ffbe6f",
+  quaternarycolor: "#dc8add",
+  maxwidth: "",
+  customcss:
+   ".satisfy-regular {\r\n  font-family: \"Satisfy\", cursive;\r\n  font-weight: 400;\r\n  font-style: normal;\r\n}\r\n\r\n.pacifico-regular {\r\n  font-family: \"Pacifico\", cursive;\r\n  font-weight: 400;\r\n  font-style: normal;\r\n}\r\n\r\n.alfa-slab-one-regular h1, h2, h3, h4, h5, h6, a {\r\n  font-family: \"Alfa Slab One\", serif;\r\n  font-weight: 400;\r\n  font-style: normal;\r\n}\r\n\r\n.arvo-regular p, html {\r\n  font-family: \"Arvo\", serif;\r\n  font-weight: 400;\r\n  font-style: normal;\r\n}\r\n\r\n.arvo-bold, em, strong, b {\r\n  font-family: \"Arvo\", serif;\r\n  font-weight: 700;\r\n  font-style: normal;\r\n}\r\n\r\n.arvo-regular-italic {\r\n  font-family: \"Arvo\", serif;\r\n  font-weight: 400;\r\n  font-style: italic;\r\n}\r\n\r\n.arvo-bold-italic {\r\n  font-family: \"Arvo\", serif;\r\n  font-weight: 700;\r\n  font-style: italic;\r\n}\r\n",
+  created_at: Thu, 01 Aug 2024 22:04:29.895658000 UTC +00:00,
+  updated_at: Thu, 07 Nov 2024 18:20:33.071892000 UTC +00:00,
+  customhead:
+   "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\r\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\r\n<link href=\"https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Pacifico&family=Satisfy&display=swap\" rel=\"stylesheet\">">,
+ #<Theme:0x000072c7ed86dad0
+  id: 2,
+  name: "Daily Bugle",
+  backgroundcolor: "#ffffff",
+  headingcolor: "#000000",
+  textcolor: "#5e5c64",
+  primarycolor: "#1c71d8",
+  secondarycolor: "#c01c28",
+  tertiarycolor: "#31234e",
+  quaternarycolor: "#1a9c9a",
+  maxwidth: "80%",
+  customcss:
+   ".raleway, p, input, span, div {\r\n  font-family: \"Raleway\", sans-serif;\r\n  font-optical-sizing: auto;\r\n  font-weight: 400;\r\n  font-style: normal;\r\n}\r\n\r\n.bebas-neue-regular, h1, h2, h3, h4, h5, h6, nav a {\r\n  font-family: \"Bebas Neue\", sans-serif;\r\n  font-weight: 400;\r\n  font-style: normal;\r\n}",
+  created_at: Thu, 01 Aug 2024 23:51:43.803411000 UTC +00:00,
+  updated_at: Thu, 07 Nov 2024 20:18:36.264038000 UTC +00:00,
+  customhead: "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\r\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\r\n<link href=\"https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital@0;1&display=swap\" rel=\"stylesheet\">">,
+ #<Theme:0x000072c7ed86d990
+  id: 3,
+  name: "Lego",
+  backgroundcolor: "#e3000b",
+  headingcolor: "#ffffff",
+  textcolor: "#000000",
+  primarycolor: "#ffea00",
+  secondarycolor: "#99ff00",
+  tertiarycolor: "#383838",
+  quaternarycolor: "#5f8684",
+  maxwidth: "",
+  customcss:
+   ".hammersmith-one-regular, h1, h2, h3, h4, h5, h6 {\r\n  font-family: \"Hammersmith One\", sans-serif;\r\n  font-weight: 400;\r\n  font-style: normal;\r\n}\r\n.solway-light {\r\n  font-family: \"Solway\", serif;\r\n  font-weight: 300;\r\n  font-style: normal;\r\n}\r\n\r\n.solway-regular, p {\r\n  font-family: \"Solway\", serif;\r\n  font-weight: 400;\r\n  font-style: normal;\r\n}\r\n\r\n.solway-medium, em {\r\n  font-family: \"Solway\", serif;\r\n  font-weight: 500;\r\n  font-style: italic;\r\n}\r\n\r\n.solway-bold, b, strong {\r\n  font-family: \"Solway\", serif;\r\n  font-weight: 700;\r\n  font-style: normal;\r\n}\r\n\r\n.solway-extrabold, label, a {\r\n  font-family: \"Solway\", serif;\r\n  font-weight: 800;\r\n  font-style: normal;\r\n}\r\n",
+  created_at: Thu, 07 Nov 2024 19:33:13.422585000 UTC +00:00,
+  updated_at: Thu, 07 Nov 2024 19:52:02.814286000 UTC +00:00,
+  customhead: "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\r\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\r\n<link href=\"https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Solway:wght@300;400;500;700;800&display=swap\" rel=\"stylesheet\">">]

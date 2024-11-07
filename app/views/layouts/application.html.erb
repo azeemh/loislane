@@ -50,8 +50,21 @@
         color: <%= Setting.first.theme.tertiarycolor %>;
       }
 
-      footer, footer * {
+      footer {
         color: <%= Setting.first.theme.quaternarycolor %>;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+
+      footer a {
+        background-color: none;
+      }
+
+      input, select {
+        font-size: 2rem;
+      }
+
+      select {
+        border-radius: .25em;
       }
 
       <%= Setting.first.theme.customcss.html_safe %>
@@ -59,6 +72,9 @@
     <% end %>
 
   </head>
+  <div id="newsbar"><p><%= DateTime.now.strftime("%A, %B, %d, %Y %H:%M") %><% if user_signed_in? %> | <%= link_to "New Story", new_story_path %> | <%= link_to "Drafts", "/drafts" %> <% end %></p></div>
+
+  <br>
 
   <div id="logo">
     <a href="/">
